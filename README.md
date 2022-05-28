@@ -11,6 +11,12 @@ export TF_VAR_ARM_TENANT_ID="<YOUR_TENANT_ID>"
 export TF_VAR_ARM_CLIENT_ID="<YOUR_CLIENT_ID>"
 export TF_VAR_ARM_CLIENT_SECRET="<YOUR_CLIENT_SECRET>"
 ```
+
+run the following command for the variables to take effect:
+```console
+source variables.env
+```
+
 If you don't know your credentials, follow this guide to obtain them:
 [Microsoft Docs](https://docs.microsoft.com/pt-br/azure/developer/terraform/get-started-cloud-shell-bash?tabs=bash#authenticate-to-azure-via-a-microsoft-account)
 
@@ -31,9 +37,10 @@ terraform apply
 
 # Accessing the virtual machine
 After runnign, terraform will save the vm details.
-First, save the private key to a file:
+First, save the private key to a file and give the appropriate permissions:
 ```console
 terraform output -raw tls_private_key > id_rsa
+chmod 600 id_rsa
 ```
 Get the vm ip address:
 ```console

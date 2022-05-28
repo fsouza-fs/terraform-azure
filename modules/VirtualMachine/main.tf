@@ -4,7 +4,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
   location              = var.recgplocation
   resource_group_name   = var.recgpname
   network_interface_ids = [var.netinterfc]
-  size                  = "Standard_DS1_v2"
+  size                  = "Standard_B2s"
 
   os_disk {
     name                 = "myOsDisk"

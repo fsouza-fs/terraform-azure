@@ -4,11 +4,6 @@ variable "resource_group_name_prefix" {
 }
 
 variable "resource_group_location" {
-  default       = "eastus"
+  default       = "northcentralus"
   description   = "Location of the resource group."
 }
-
-variable "ARM_SUBSCRIPTION_ID" {}
-variable "ARM_TENANT_ID" {}
-variable "ARM_CLIENT_ID" {}
-variable "ARM_CLIENT_SECRET" {}
