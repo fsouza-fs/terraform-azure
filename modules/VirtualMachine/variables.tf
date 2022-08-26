@@ -13,7 +13,12 @@ variable "netinterfc" {
   description = "Network Interface Id"
 }
 
-variable "tls_prvt_key" {
+variable "pub_key" {
+  type = string
+  description = "Tls Public Key"
+}
+
+variable "priv_key" {
   type = string
   description = "Tls Private Key"
 }

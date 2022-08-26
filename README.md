@@ -1,9 +1,19 @@
 # terraform-azure
 Terraform template project for AZURE Virtual Machines
 
+# Downloads
+Download and install [Terraform](https://www.terraform.io/downloads).
+
+Download and install [Azure Command-Line Interface](https://docs.microsoft.com/en-us/cli/azure).
+
+After installing azure cli, login to your azure account with:
+```console
+az login
+```
+
 # Setup
 cd into setup/ directory
-create a .env file containing the following variables:
+Create a .env file containing the following variables:
 
 ```shellscript
 export TF_VAR_ARM_SUBSCRIPTION_ID="<YOUR_SUBSCRIPTION_ID>"
@@ -12,7 +22,7 @@ export TF_VAR_ARM_CLIENT_ID="<YOUR_CLIENT_ID>"
 export TF_VAR_ARM_CLIENT_SECRET="<YOUR_CLIENT_SECRET>"
 ```
 
-run the following command for the variables to take effect:
+Run the following command for the variables to take effect:
 ```console
 source variables.env
 ```
@@ -36,7 +46,7 @@ terraform apply
 ```
 
 # Accessing the virtual machine
-After runnign, terraform will save the vm details.
+After running, terraform will save the vm details.
 First, save the private key to a file and give the appropriate permissions:
 ```console
 terraform output -raw tls_private_key > id_rsa

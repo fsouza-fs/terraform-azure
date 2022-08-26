@@ -12,7 +12,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = "${chomp(data.http.myip.body)}"
+    source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
 }

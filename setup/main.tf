@@ -53,7 +53,8 @@ module "VirtualMachine" {
   recgplocation = azurerm_resource_group.rg.location
   recgpname = azurerm_resource_group.rg.name
   netinterfc = module.Network.netinterfc.id
-  tls_prvt_key = tls_private_key.example_ssh.public_key_openssh
+  pub_key = tls_private_key.example_ssh.public_key_openssh
+  priv_key = tls_private_key.example_ssh.private_key_openssh
   stg_account = azurerm_storage_account.mystorageaccount.primary_blob_endpoint
 }
 

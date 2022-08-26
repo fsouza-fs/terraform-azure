@@ -9,13 +9,13 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
   os_disk {
     name                 = "myOsDisk"
     caching              = "ReadWrite"
-    storage_account_type = "Premium_LRS"
+    storage_account_type = "Standard_LRS"
   }
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
+    offer     = "0001-com-ubuntu-server-focal"
+    sku       = "20_04-lts"
     version   = "latest"
   }
 
@@ -25,7 +25,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
 
   admin_ssh_key {
     username   = "azureuser"
-    public_key = var.tls_prvt_key
+    public_key = var.pub_key
   }
 
   boot_diagnostics {
